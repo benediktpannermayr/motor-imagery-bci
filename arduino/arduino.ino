@@ -19,12 +19,11 @@ void setup() {
 }
 
 void loop() {
-  // --- Serielle Eingabe prüfen ---
   if (Serial.available()) {
     String line = Serial.readStringUntil('\n'); // Auslesen einer Zeile der seriellen Schnittstelle
     line.trim(); // Leerzeichen und CR entfernen
 
-    // Befehler verarbeiten
+    // Befehle verarbeiten
     if (line.startsWith("p>a:")) {
       if (line == "p>a:right") {
         changeButtonState(carForward, true);
